@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Sacramento);
+
+body{background-color:#3f51b5;}
+
+div.mario {
+  display:table;
+  position:relative;
+  margin:250px auto 0 auto;
+}
+
+div.mario span.coin{
+  position:absolute;
+  width:100%;
+  text-align:center;
+  margin-top:0px;
+  opacity:0;
+}
+
+div.mario div.box{
+  position:relative;
+  width:150px;
+  height:150px;
+  z-index:1;
+  transition:margin-top .2s;
+  cursor:pointer;
+  background-image:url('http://adobewordpress.com/tasarim/images/box.png');
+  background-position:0 0;
+}
+
+div.mario div.box.empty{
+  background-image:url('http://adobewordpress.com/tasarim/images/box.png');
+  background-position:150px 0;
+  margin-top:0;
+  cursor:not-allowed;
+}
+
+div.mario span.coin img{
+  transition:opacity .3s ease-out;
+}
+
+div.mario span.coin.play{
+  transition:all .5s ease-out;
+  -webkit-animation-name: position;
+  -webkit-animation-duration: 800ms;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: position;
+  -moz-animation-duration: 800ms;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: position;
+  -ms-animation-duration: 800ms;
+  -ms-animation-timing-function: linear;
+  animation-name: position;
+  animation-duration: 800ms;
+  animation-timing-function: linear;
+}
+
+div.mario span.coin.play img{
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 400ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 400ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 400ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: 400ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-moz-keyframes spin {
+    10% { width:90px;height:120px}
+    45% { width:3px;height:120px}
+    90% { width:90px;height:120px;}
+}
+@-webkit-keyframes spin {
+    10% { width:90px;height:120px}
+    45% { width:3px;height:120px}
+    90% { width:90px;height:120px;}
+}
+@keyframes spin {
+    10% { width:90px;height:120px}
+    45% { width:3px;height:120px}
+    90% { width:90px;height:120px;}
+}
+
+@-moz-keyframes position {
+    10% { margin-top:-100px;opacity:0;}
+    25% { margin-top:-130px;opacity:1;}
+    85% { margin-top:-180px;}
+    90% { margin-top:-200px;opacity:0;}
+}
+@-webkit-keyframes position {
+    10% { margin-top:-100px;opacity:0;}
+    25% { margin-top:-130px;opacity:1;}
+    85% { margin-top:-180px;}
+    90% { margin-top:-200px;opacity:0;}
+}
+@keyframes position {
+    10% { margin-top:-100px;opacity:0;}
+    25% { margin-top:-130px;opacity:1;}
+    85% { margin-top:-180px;}
+    90% { margin-top:-200px;opacity:0;}
+}
+
+/* OFF-TOPIC */
+a.link{
+  position:fixed;bottom:10px;
+  font:300 26px 'Sacramento', sans-serif;
+  color:white;
+  cursor:pointer;
+  text-decoration:none;
+}
